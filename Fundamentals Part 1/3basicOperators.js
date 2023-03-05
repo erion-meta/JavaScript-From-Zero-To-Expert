@@ -2,6 +2,7 @@ let populationAlbania = 2832439;
 console.log(populationAlbania / 2);
 populationAlbania++;
 console.log(populationAlbania);
+
 let populationFinland = 6000000;
 let albaniaHigherThanFinland = populationAlbania > populationFinland;
 console.log(albaniaHigherThanFinland);
