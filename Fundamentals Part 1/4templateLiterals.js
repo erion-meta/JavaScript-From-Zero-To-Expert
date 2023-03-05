@@ -9,9 +9,9 @@ console.log(populationAlbania / 2);
 populationAlbania++;
 console.log(populationAlbania);
 
-// let populationFinland = 6000000;
-// let albaniaHigherThanFinland = populationAlbania > populationFinland;
-// console.log(albaniaHigherThanFinland);
+let populationFinland = 6000000;
+let albaniaHigherThanFinland = populationAlbania > populationFinland;
+console.log(albaniaHigherThanFinland);
 
-// let description = `${country} is in ${continent} and their population is ${population} milion`;
-// console.log(description);
+let description = `${country} is in ${continent} and their population is ${population} milion`;
+console.log(description);
