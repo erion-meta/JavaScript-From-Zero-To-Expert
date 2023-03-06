@@ -9,3 +9,9 @@ const country3 = percentageOfWorld1(150);
 console.log(`China population percentage is ${country1}`);
 console.log(`Italy population percentage is ${country2}`);
 console.log(`Brazil population percentage is ${country3}`);
+
+const percentageOfWorld2 = function (population) {
+  return (population / 7900) * 100;
+};
+
+console.log(`India ${percentageOfWorld2(2000)}`);
