@@ -1,5 +1,6 @@
 const messageText = document.querySelector(".message");
 const checkButton = document.querySelector(".check");
+const score = document.querySelector(".score");
 let randomNumber = Math.floor(Math.random() * 21);
 
 checkButton.addEventListener("click", function () {
