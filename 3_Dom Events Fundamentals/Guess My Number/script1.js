@@ -1,10 +1,13 @@
 const messageText = document.querySelector(".message");
 const checkButton = document.querySelector(".check");
-const score = document.querySelector(".score");
 let randomNumber = Math.floor(Math.random() * 21);
+const score = document.querySelector(".score").value;
+console.log(score);
+console.log(randomNumber);
 
 checkButton.addEventListener("click", function () {
   const guesInput = Number(document.querySelector(".guess").value);
+
   console.log(guesInput);
 
   if (!guesInput) {
@@ -13,7 +16,9 @@ checkButton.addEventListener("click", function () {
     messageText.textContent = "Correct Number";
   } else if (guesInput > randomNumber) {
     messageText.textContent = "To high";
+    score--;
   } else {
     messageText.textContent = "To low";
+    score--;
   }
 });
