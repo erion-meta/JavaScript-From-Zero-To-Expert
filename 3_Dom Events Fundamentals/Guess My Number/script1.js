@@ -17,11 +17,20 @@ checkButton.addEventListener("click", function () {
 
   console.log(guesInput);
 
+  // When there is no number
   if (!guesInput) {
     messageText.textContent = "🚫 No number";
+
+    // When number is correct and player wins
   } else if (guesInput === randomNumber) {
     messageText.textContent = "🎉 Correct Number";
     highscore.innerHTML = scoreValue.toString();
+    document.querySelector(".number").textContent = guesInput;
+    document.querySelector(".number").classList.add("numberCorrect");
+
+    document.querySelector("body").style = "background-color: #60b347;";
+
+    // When number is higher
   } else if (guesInput > randomNumber) {
     if (scoreValue > 1) {
       messageText.textContent = "📈 To high";
@@ -31,7 +40,10 @@ checkButton.addEventListener("click", function () {
     } else {
       messageText.textContent = "⛔ Game Over!";
       score.innerHTML = 0;
+      document.querySelector("body").style = "background-color: #DD5353;";
     }
+
+    // When number is lower
   } else {
     if (scoreValue > 1) {
       messageText.textContent = "📉 To low";
@@ -41,6 +53,7 @@ checkButton.addEventListener("click", function () {
     } else {
       messageText.textContent = "⛔ Game Over!";
       score.innerHTML = 0;
+      document.querySelector("body").style = "background-color: #DD5353;";
     }
   }
 });

@@ -68,6 +68,12 @@ h1 {
   left: 50%;
   transform: translate(-50%, 50%);
 }
+.numberCorrect {
+  font-size: 7rem;
+  width: 27rem;
+  padding: 2rem 3rem;
+  color: #060505;
+}
 
 .between {
   font-size: 1.4rem;
