@@ -17,34 +17,32 @@ let initialScore = 20;
 let highscore = document.querySelector(".highscore");
 let high = 0;
 
-console.log(scoreValue);
-console.log(randomNumber);
+const displayMessage = function (message) {
+  messageText.textContent = message;
+};
 
 againBtn.addEventListener("click", function () {
   initialScore = 20;
   body.style = "background-color: #222;";
   numberFinder.classList.remove("numberCorrect");
   randomNumber = Math.floor(Math.random() * 20) + 1;
-  messageText.textContent = "🎯 Start guessing...";
+  displayMessage("🎯 Start guessing...");
   numberFinder.textContent = "?";
   numberInput.value = "";
   score.innerHTML = 20;
   scoreValue = initialScore;
-  console.log(randomNumber);
 });
 
 checkButton.addEventListener("click", function () {
   const guesInput = Number(numberInput.value); // Number to guess by the user
 
-  console.log(guesInput);
-
   // When there is no number
   if (!guesInput) {
-    messageText.textContent = "🚫 No number";
+    displayMessage("🚫 No number");
 
     // When number is correct and player wins
   } else if (guesInput === randomNumber) {
-    messageText.textContent = "🎉 Correct Number";
+    displayMessage("🎉 Correct Number");
     numberFinder.textContent = guesInput;
     numberFinder.classList.add("numberCorrect");
     body.style = correctNumberStyle;
@@ -54,27 +52,13 @@ checkButton.addEventListener("click", function () {
       high = scoreValue;
       highscore.textContent = high;
     }
-
-    // When number is higher
-  } else if (guesInput > randomNumber) {
+  } else if (guesInput !== randomNumber) {
     if (scoreValue > 1) {
-      messageText.textContent = "📈 To high";
+      displayMessage(guesInput > randomNumber ? "📈 To high" : "📉 To low");
       scoreValue--;
       score.innerHTML = scoreValue.toString();
     } else {
-      messageText.textContent = "⛔ Game Over!";
-      score.innerHTML = 0;
-      body.style = gameOverStyle;
-    }
-
-    // When number is lower
-  } else {
-    if (scoreValue > 1) {
-      messageText.textContent = "📉 To low";
-      scoreValue--;
-      score.innerHTML = scoreValue.toString();
-    } else {
-      messageText.textContent = "⛔ Game Over!";
+      displayMessage("⛔ Game Over!");
       score.innerHTML = 0;
       body.style = gameOverStyle;
     }
