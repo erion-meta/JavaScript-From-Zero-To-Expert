@@ -2,6 +2,7 @@ const againBtn = document.querySelector(".again"); // againBtn to restart the ga
 const messageText = document.querySelector(".message"); // mesage text variable
 const checkButton = document.querySelector(".check"); // button to check number
 let randomNumber = Math.floor(Math.random() * 21); // random number
+let highscoreArr = []; // Array to store scores and find highscore;
 
 // score variables
 let score = document.querySelector(".score");
@@ -10,6 +11,7 @@ let initialScore = 20;
 
 // highscore
 let highscore = document.querySelector(".highscore");
+let high = 0;
 
 console.log(scoreValue);
 console.log(randomNumber);
@@ -39,11 +41,15 @@ checkButton.addEventListener("click", function () {
     // When number is correct and player wins
   } else if (guesInput === randomNumber) {
     messageText.textContent = "🎉 Correct Number";
-    highscore.innerHTML = scoreValue.toString();
     document.querySelector(".number").textContent = guesInput;
     document.querySelector(".number").classList.add("numberCorrect");
-
     document.querySelector("body").style = "background-color: #60b347;";
+
+    // High score calculate
+    if (scoreValue > high) {
+      high = scoreValue;
+      highscore.textContent = high;
+    }
 
     // When number is higher
   } else if (guesInput > randomNumber) {
@@ -51,7 +57,6 @@ checkButton.addEventListener("click", function () {
       messageText.textContent = "📈 To high";
       scoreValue--;
       score.innerHTML = scoreValue.toString();
-      highscore.innerHTML = scoreValue.toString();
     } else {
       messageText.textContent = "⛔ Game Over!";
       score.innerHTML = 0;
@@ -64,7 +69,6 @@ checkButton.addEventListener("click", function () {
       messageText.textContent = "📉 To low";
       scoreValue--;
       score.innerHTML = scoreValue.toString();
-      highscore.innerHTML = scoreValue.toString();
     } else {
       messageText.textContent = "⛔ Game Over!";
       score.innerHTML = 0;
