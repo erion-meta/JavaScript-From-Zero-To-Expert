@@ -18,19 +18,29 @@ checkButton.addEventListener("click", function () {
   console.log(guesInput);
 
   if (!guesInput) {
-    messageText.textContent = "No number";
+    messageText.textContent = "🚫 No number";
   } else if (guesInput === randomNumber) {
-    messageText.textContent = "Correct Number";
+    messageText.textContent = "🎉 Correct Number";
     highscore.innerHTML = scoreValue.toString();
   } else if (guesInput > randomNumber) {
-    messageText.textContent = "To high";
-    scoreValue--;
-    score.innerHTML = scoreValue.toString();
-    highscore.innerHTML = scoreValue.toString();
+    if (scoreValue > 1) {
+      messageText.textContent = "📈 To high";
+      scoreValue--;
+      score.innerHTML = scoreValue.toString();
+      highscore.innerHTML = scoreValue.toString();
+    } else {
+      messageText.textContent = "⛔ Game Over!";
+      score.innerHTML = 0;
+    }
   } else {
-    messageText.textContent = "To low";
-    scoreValue--;
-    score.innerHTML = scoreValue.toString();
-    highscore.innerHTML = scoreValue.toString();
+    if (scoreValue > 1) {
+      messageText.textContent = "📉 To low";
+      scoreValue--;
+      score.innerHTML = scoreValue.toString();
+      highscore.innerHTML = scoreValue.toString();
+    } else {
+      messageText.textContent = "⛔ Game Over!";
+      score.innerHTML = 0;
+    }
   }
 });
