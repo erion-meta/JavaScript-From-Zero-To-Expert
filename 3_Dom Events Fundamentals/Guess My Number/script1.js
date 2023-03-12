@@ -1,3 +1,4 @@
+const againBtn = document.querySelector(".again"); // againBtn to restart the game
 const messageText = document.querySelector(".message"); // mesage text variable
 const checkButton = document.querySelector(".check"); // button to check number
 let randomNumber = Math.floor(Math.random() * 21); // random number
@@ -5,12 +6,26 @@ let randomNumber = Math.floor(Math.random() * 21); // random number
 // score variables
 let score = document.querySelector(".score");
 let scoreValue = Number(score.innerHTML);
+let initialScore = 20;
 
 // highscore
 let highscore = document.querySelector(".highscore");
 
 console.log(scoreValue);
 console.log(randomNumber);
+
+againBtn.addEventListener("click", function () {
+  initialScore = 20;
+  document.querySelector("body").style = "background-color: #222;";
+  document.querySelector(".number").classList.remove("numberCorrect");
+  randomNumber = Math.floor(Math.random() * 21);
+  messageText.textContent = "🎯 Start guessing...";
+  document.querySelector(".number").textContent = "?";
+  document.querySelector(".guess").value = "";
+  score.innerHTML = 20;
+  scoreValue = initialScore;
+  console.log(randomNumber);
+});
 
 checkButton.addEventListener("click", function () {
   const guesInput = Number(document.querySelector(".guess").value); // Number to guess by the user
