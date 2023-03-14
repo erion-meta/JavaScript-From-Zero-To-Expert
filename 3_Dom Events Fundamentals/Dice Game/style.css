@@ -123,10 +123,10 @@ main {
   top: 3rem;
 }
 .btn--roll {
-  top: 32rem;
+  top: 30rem;
 }
 .btn--hold {
-  top: 38rem;
+  top: 36rem;
 }
 .btn:active {
   transform: translate(-50%, 3px);
