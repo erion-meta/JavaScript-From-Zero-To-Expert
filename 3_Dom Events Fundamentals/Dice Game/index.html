@@ -5,11 +5,17 @@
     <meta content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/07413c1875.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Dice Game</title>
   </head>
   <body>
     <div class="rulesDiv">
-      <button id="rules" class="btnRules" type="button">Game Rules</button>
+      <button id="rules" class="btnRules" type="button">
+        <i class="fa-solid fa-scale-balanced"></i>Game Rules
+      </button>
     </div>
     <main>
       <section class="player player--0 player--active">
@@ -30,9 +36,15 @@
       </section>
 
       <img src="diceIMG/dice-5.png" alt="Playing dice" class="dice" />
-      <button type="button" class="btn btn--new">🔄 New game</button>
-      <button type="button" class="btn btn--roll">🎲 Roll dice</button>
-      <button type="button" class="btn btn--hold">📥 Hold</button>
+      <button type="button" class="btn btn--new">
+        <i class="fa-solid fa-circle-plus"></i> New game
+      </button>
+      <button type="button" class="btn btn--roll">
+        <i class="fa-solid fa-dice"></i> Roll dice
+      </button>
+      <button type="button" class="btn btn--hold">
+        <i class="fa-solid fa-arrow-down-to-bracket"></i> Hold
+      </button>
     </main>
     <script src="script.js"></script>
   </body>
