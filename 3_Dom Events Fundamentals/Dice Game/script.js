@@ -44,7 +44,7 @@ function closeRules() {
 
 rulesBtn.addEventListener("click", openRules);
 closeRulesBtn.addEventListener("click", closeRules);
-overlay.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeRules);
 
 // Init function
 function init() {
