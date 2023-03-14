@@ -32,7 +32,7 @@ main {
   border-radius: 9px;
   overflow: hidden;
   display: flex;
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 .player {
   flex: 50%;
@@ -61,7 +61,7 @@ main {
   margin-top: 1rem;
 }
 .player--active {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.658);
 }
 .player--active .name {
   font-weight: 700;
@@ -152,4 +152,24 @@ main {
 }
 .hidden {
   display: none;
+}
+
+/* RULES */
+.rulesDiv {
+  position: absolute;
+  top: 5rem;
+}
+.btnRules {
+  background-color: rgba(255, 255, 255, 0.756);
+  background-color: rgba(255, 255, 255, 0.858);
+  font-family: inherit;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  text-transform: uppercase;
+
+  padding: 0.5rem 2rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
