@@ -24,7 +24,7 @@ body {
 main {
   position: relative;
   width: 100rem;
-  height: 60rem;
+  height: 45rem;
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
   filter: blur();
@@ -32,10 +32,11 @@ main {
   border-radius: 9px;
   overflow: hidden;
   display: flex;
+  margin-top: 5rem;
 }
 .player {
   flex: 50%;
-  padding: 9rem;
+  padding: 3rem 9rem 7rem 9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,18 +46,19 @@ main {
 /* ELEMENTS */
 .name {
   position: relative;
-  font-size: 4rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   word-spacing: 2px;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .score {
   font-size: 8rem;
   font-weight: 300;
   color: #c7365f;
-  margin-bottom: auto;
+  margin-bottom: 8rem;
+  margin-top: 1rem;
 }
 .player--active {
   background-color: rgba(255, 255, 255, 0.4);
@@ -75,14 +77,13 @@ main {
   opacity: 0.8;
   border-radius: 9px;
   color: #fff;
-  width: 65%;
+  width: 60%;
   padding: 2rem;
   text-align: center;
   transition: all 0.75s;
 }
 .current-label {
   text-transform: uppercase;
-  margin-bottom: 1rem;
   font-size: 1.7rem;
   color: #ddd;
 }
@@ -105,11 +106,11 @@ main {
   font-weight: 400;
   transition: all 0.2s;
 
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.064);
   backdrop-filter: blur(10px);
 
-  padding: 0.7rem 2.5rem;
+  padding: 0.5rem 2rem;
   border-radius: 50rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
@@ -119,13 +120,13 @@ main {
   margin-right: 0.7rem;
 }
 .btn--new {
-  top: 4rem;
+  top: 3rem;
 }
 .btn--roll {
-  top: 39.3rem;
+  top: 32rem;
 }
 .btn--hold {
-  top: 46.1rem;
+  top: 38rem;
 }
 .btn:active {
   transform: translate(-50%, 3px);
