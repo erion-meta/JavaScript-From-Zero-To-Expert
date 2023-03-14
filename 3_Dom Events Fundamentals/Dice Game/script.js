@@ -1,5 +1,11 @@
 // Selecting elements
 
+// Rules Elements
+const rulesBtn = document.getElementById("rulesBtn");
+const rules = document.querySelector(".rules");
+const closeRulesBtn = document.querySelector(".close-rules");
+const overlay = document.querySelector(".overlay");
+
 // Player 0
 const player0El = document.querySelector(".player--0");
 const namePlayer0 = document.getElementById("name--0");
@@ -23,6 +29,22 @@ const diceEl = document.querySelector(".dice");
 // Starting conditions
 let scoresArr, activePlayer, currentScore, playing;
 init();
+
+// Rules Functions
+function openRules() {
+  // Open rules function
+  rules.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+}
+// Close rules function
+function closeRules() {
+  rules.classList.add("hidden");
+  overlay.classList.add("hidden");
+}
+
+rulesBtn.addEventListener("click", openRules);
+closeRulesBtn.addEventListener("click", closeRules);
+overlay.addEventListener("click", closeModal);
 
 // Init function
 function init() {
