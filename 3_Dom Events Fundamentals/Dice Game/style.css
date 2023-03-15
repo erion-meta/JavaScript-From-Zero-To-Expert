@@ -264,6 +264,49 @@ p {
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
+.input {
+  color: #8707ff;
+  border: 2px solid #8707ff;
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+  max-width: 190px;
+  margin-right: 5rem;
+}
+.input:active {
+  box-shadow: 2px 2px 15px #8707ff inset;
+}
+
+.submit {
+  border: none;
+  color: #fff;
+  background-image: linear-gradient(30deg, #8000ff, #4c91f7);
+  border-radius: 20px;
+  background-size: 100% auto;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 0.4em 1.5em;
+}
+.submit:hover {
+  background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse512 1.5s infinite;
+}
+
+@keyframes pulse512 {
+  0% {
+    box-shadow: 0 0 0 0 #05bada66;
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+  }
+}
 
 .close-Input {
   position: absolute;
@@ -274,6 +317,14 @@ p {
   cursor: pointer;
   border: none;
   background: none;
+}
+.fa-address-card {
+  font-size: 3rem;
+  margin: 0 0 1.5rem 7rem;
+  color: #8000ff;
+}
+.fa-address-card2 {
+  margin-left: 20rem;
 }
 
 #resetGame {
