@@ -232,7 +232,7 @@ p {
 
 /* NAME */
 
-.nameBtn {
+#namePlayersBtn {
   position: absolute;
   top: 5rem;
   left: 14rem;
@@ -249,4 +249,29 @@ p {
   padding: 0.5rem 2rem;
   border-radius: 50rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.nameInput {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.close-Input {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
 }

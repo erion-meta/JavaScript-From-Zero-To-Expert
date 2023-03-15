@@ -1,4 +1,8 @@
 // Selecting elements
+// Name Elements
+const namePlayersBtn = document.getElementById("namePlayersBtn");
+const nameInput = document.querySelector(".nameInput");
+const closeInput = document.querySelector(".close-Input");
 
 // Rules Elements
 const rulesBtn = document.getElementById("rulesBtn");
@@ -42,6 +46,24 @@ function closeRules() {
   overlay.classList.add("hidden");
 }
 
+// Name INPUT
+function openNameInput() {
+  // Open name input function
+  nameInput.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+}
+// Close rules function
+function closeNameInput() {
+  nameInput.classList.add("hidden");
+  overlay.classList.add("hidden");
+}
+
+// Input btn Events
+namePlayersBtn.addEventListener("click", openNameInput);
+closeInput.addEventListener("click", closeNameInput);
+overlay.addEventListener("click", closeNameInput);
+
+//Rules btn events
 rulesBtn.addEventListener("click", openRules);
 closeRulesBtn.addEventListener("click", closeRules);
 overlay.addEventListener("click", closeRules);
