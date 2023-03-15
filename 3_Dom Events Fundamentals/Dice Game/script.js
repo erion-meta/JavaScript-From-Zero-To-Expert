@@ -3,6 +3,9 @@
 const namePlayersBtn = document.getElementById("namePlayersBtn");
 const nameInput = document.querySelector(".nameInput");
 const closeInput = document.querySelector(".close-Input");
+const palyer1Input = document.getElementById("palyer1Input");
+const palyer2Input = document.getElementById("palyer2Input");
+const submit = document.getElementById("submit");
 
 // Rules Elements
 const rulesBtn = document.getElementById("rulesBtn");
@@ -149,3 +152,9 @@ holdScoreBtn.addEventListener("click", function () {
 
 // Reset Game btn
 newGameBtn.addEventListener("click", init);
+
+submit.addEventListener("click", () => {
+  closeNameInput();
+  namePlayer0.textContent = palyer1Input.value;
+  namePlayer1.textContent = palyer2Input.value;
+});
