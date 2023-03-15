@@ -12,9 +12,18 @@
     <title>Dice Game</title>
   </head>
   <body>
+    <!-- Name Players -->
     <button id="namePlayers" class="nameBtn" type="button">
       <i class="fa-solid fa-file-signature"></i></i>Player Name
     </button>
+    <div class="hidden rules">
+      <form action="get">
+        <input id="palyer1Input" type="text" placeholder="Player 1 Name">
+        <input id="palyer2Input" type="text" placeholder="Player 2 Name">
+      </form>
+    </div>
+
+    <!-- Game Rules -->
     <button id="rulesBtn" class="btnRules" type="button">
       <i class="fa-solid fa-scale-balanced"></i>Game Rules
     </button>
@@ -37,6 +46,8 @@
       </p>
       <i class="fa-solid fa-gamepad"></i>
     </div>
+
+    <!-- Game -->
     <main>
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
