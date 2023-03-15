@@ -161,7 +161,7 @@ main {
   background-color: rgba(255, 255, 255, 0.756);
   background-color: rgba(255, 255, 255, 0.858);
   font-family: inherit;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   font-weight: 400;
   transition: all 0.2s;
@@ -228,4 +228,25 @@ p {
 .fa-trophy {
   font-size: 25px;
   margin: 0 0 1.5rem 10rem;
+}
+
+/* NAME */
+
+.nameBtn {
+  position: absolute;
+  top: 5rem;
+  left: 14rem;
+  background-color: rgba(255, 255, 255, 0.756);
+  background-color: rgba(255, 255, 255, 0.858);
+  font-family: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  text-transform: uppercase;
+
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
