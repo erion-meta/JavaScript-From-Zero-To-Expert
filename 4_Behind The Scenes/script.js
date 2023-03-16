@@ -92,4 +92,4 @@ const amine = {
 
 const marriedAmine = amine;
 marriedAmine.lastName = "Meta";
-console.log(amine, marriedAmine);
+console.log(amine, ...marriedAmine);
