@@ -78,3 +78,18 @@
 
 // meta.calcAge = erion.calcAge;
 // meta.calcAge();
+
+let lastName = "Meta";
+let oldLastName = lastName;
+lastName = "Keta";
+console.log(lastName, oldLastName);
+
+const amine = {
+  firstName: "Amine",
+  lastName: "Keta",
+  age: 22,
+};
+
+const marriedAmine = amine;
+marriedAmine.lastName = "Meta";
+console.log(amine, marriedAmine);
