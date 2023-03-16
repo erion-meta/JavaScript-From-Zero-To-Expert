@@ -1,4 +1,4 @@
-// SCOPING
+///////////// SCOPING /////////////////////
 
 // function calcAge(birthYear) {
 //   const age = 2023 - birthYear;
@@ -19,7 +19,7 @@
 // const firstName = "Erion";
 // calcAge(2001);
 
-// HOISTING variables
+//////////// HOISTING variables /////////////
 
 // console.log(job); // undefined
 // console.log(year); // Cannot access 'year' before initialization
@@ -29,7 +29,7 @@
 // let year = 2023;
 // const price = 2000;
 
-// HOISTINg functions
+// HOISTING functions
 
 // console.log(addNum1(2, 3)); // 5
 // console.log(addNum2(2, 3)); // Cannot access 'addNum2' before initialization
@@ -44,3 +44,37 @@
 // };
 
 // const addNum3 = (a, b) => a + b;
+
+/////////////// THIS Keyword ////////////////
+
+// const calcAge = function (birthYear) {
+//   console.log(2023 - birthYear);
+//   console.log(this); // <ref *1> Object [global]
+// };
+
+// calcAge(2001);
+
+// const calcAgeArrow = (birthYear) => {
+//   console.log(2023 - birthYear);
+//   console.log(this); // window{}
+// };
+// calcAgeArrow(2001);
+
+// const erion = {
+//   name: "erion",
+//   lastname: "meta",
+//   birthYear: 2001,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2023 - this.birthYear);
+//   },
+// };
+
+// erion.calcAge();
+
+// const meta = {
+//   birthYear: 2000,
+// };
+
+// meta.calcAge = erion.calcAge;
+// meta.calcAge();
