@@ -51,7 +51,31 @@ const airport = "TIA International Airport";
 
 // Booleans
 
-const plane = "Air Ca Bone 234B4";
-console.log(plane.includes("A"));
-console.log(plane.startsWith("Air"));
-console.log(plane.endsWith("B3"));
+// const plane = "Air Ca Bone 234B4";
+// console.log(plane.includes("A"));
+// console.log(plane.startsWith("Air"));
+// console.log(plane.endsWith("B3"));
+
+// Part 3
+
+// console.log("I am Boss".split(" "));
+// const name1 = "Erion Meta".split(" ");
+
+// const [firstName, lastName] = name1;
+// const newName = ["Mr. ", firstName, lastName.toUpperCase()].join(" ");
+// console.log(newName);
+
+//
+
+// Padding
+
+// const msg = "Hello mis amigos";
+// console.log(msg.padStart(30, "+"));
+
+const maskCreditCard = function (number) {
+  const str = number + "";
+  const last = str.slice(-4);
+  return last.padStart(str.length, "*");
+};
+console.log(maskCreditCard(234567876543));
+console.log(maskCreditCard("237876543123452346"));
