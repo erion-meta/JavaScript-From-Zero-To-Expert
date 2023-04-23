@@ -76,19 +76,33 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-const euroToUsd = 1.1;
+const createUsername = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word[0])
+      .join("");
+  });
+};
+createUsername(accounts);
+console.log(accounts);
 
-const movementsUSD = movements.map((mov) => mov * euroToUsd);
-console.log(movements);
-console.log(movementsUSD);
+// LECTURES
+// Map Method
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const euroToUsd = 1.1;
 
-const movementsDesc = movements.map(
-  (mov, i) =>
-    `Movement ${i + 1}: You ${mov > 0 ? "deposited" : "withdrew"} ${Math.abs(
-      mov
-    )}`
-);
+// const movementsUSD = movements.map((mov) => mov * euroToUsd);
+// console.log(movements);
+// console.log(movementsUSD);
 
-console.log(movementsDesc);
+// const movementsDesc = movements.map(
+//   (mov, i) =>
+//     `Movement ${i + 1}: You ${mov > 0 ? "deposited" : "withdrew"} ${Math.abs(
+//       mov
+//     )}`
+// );
+
+// console.log(movementsDesc);
 /////////////////////////////////////////////////
