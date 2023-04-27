@@ -85,21 +85,21 @@ const calcDisplayBalance = function (movements) {
 };
 
 // Function that calculate incomes, outcomes and interest
-const calcDisplaySummary = function (movements) {
-  const incomes = movements
+const calcDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter((mov) => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${incomes} €`;
 
-  const outcomes = movements
+  const outcomes = acc.movements
     .filter((mov) => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
 
   labelSumOut.textContent = `${Math.abs(outcomes)} €`;
 
-  const interest = movements
+  const interest = acc.movements
     .filter((mov) => mov > 0)
-    .map((deposit) => (deposit * 1.2) / 100)
+    .map((deposit) => (deposit * acc.interestRate) / 100)
     .filter((int, i, arr) => {
       // console.log(arr);
       return int >= 1;
@@ -142,6 +142,9 @@ btnLogin.addEventListener("click", (e) => {
     }`;
     containerApp.style.opacity = "100";
 
+    // Clear input fields
+    inputLoginUsername.value = inputLoginPin.value = "";
+    inputLoginPin.blur();
     // Display movements
     displayMovements(currentAccount.movements);
 
@@ -149,7 +152,7 @@ btnLogin.addEventListener("click", (e) => {
     calcDisplayBalance(currentAccount.movements);
 
     // Display summary
-    calcDisplaySummary(currentAccount.movements);
+    calcDisplaySummary(currentAccount);
   }
 });
 /////////////////////////////////////////////////
