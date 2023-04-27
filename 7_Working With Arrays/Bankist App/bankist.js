@@ -59,6 +59,7 @@ const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
+// Function that creates movements in account
 const displayMovements = function (movements) {
   containerMovements.innerHTML = "";
   movements.forEach(function (mov, i) {
@@ -74,16 +75,16 @@ const displayMovements = function (movements) {
     containerMovements.insertAdjacentHTML("afterbegin", html);
   });
 };
-displayMovements(account1.movements);
 
+// Calculate the display balance of each account
 const calcDisplayBalance = function (movements) {
   const balance = movements.reduce(function (acc, mov, i, arr) {
     return acc + mov;
   }, 0);
   labelBalance.textContent = `${balance} € `;
 };
-calcDisplayBalance(account1.movements);
 
+// Function that calculate incomes, outcomes and interest
 const calcDisplaySummary = function (movements) {
   const incomes = movements
     .filter((mov) => mov > 0)
@@ -100,15 +101,15 @@ const calcDisplaySummary = function (movements) {
     .filter((mov) => mov > 0)
     .map((deposit) => (deposit * 1.2) / 100)
     .filter((int, i, arr) => {
-      console.log(arr);
+      // console.log(arr);
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
 
   labelSumInterest.textContent = `${interest} €`;
 };
-calcDisplaySummary(account1.movements);
 
+// Function that create usernames of owners account
 const createUsername = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -121,4 +122,34 @@ const createUsername = function (accs) {
 createUsername(accounts);
 console.log(accounts);
 
+// Event handler
+
+let currentAccount;
+
+btnLogin.addEventListener("click", (e) => {
+  // Prevent form from submitting
+  e.preventDefault();
+
+  currentAccount = accounts.find(
+    (acc) => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // Display UI and message
+    labelWelcome.textContent = `Welcome back ${
+      currentAccount.owner.split(" ")[0]
+    }`;
+    containerApp.style.opacity = "100";
+
+    // Display movements
+    displayMovements(currentAccount.movements);
+
+    // Display balance
+    calcDisplayBalance(currentAccount.movements);
+
+    // Display summary
+    calcDisplaySummary(currentAccount.movements);
+  }
+});
 /////////////////////////////////////////////////
