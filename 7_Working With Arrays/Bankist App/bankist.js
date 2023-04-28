@@ -1,5 +1,3 @@
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
 // BANKIST APP
 
 // Data
@@ -59,10 +57,18 @@ const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
-// Function that creates movements in account
-const displayMovements = function (movements) {
+// Function that creates, display and sort movements in account
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = "";
-  movements.forEach(function (mov, i) {
+
+  const movs = sort
+    ? movements.slice().sort((a, b) => {
+        if (a > b) return 1;
+        if (a < b) return -1;
+      })
+    : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? "deposit" : "withdrawal";
 
     const html = `   <div class="movements__row">
@@ -163,7 +169,7 @@ btnLogin.addEventListener("click", (e) => {
   }
 });
 
-// Transfer amount to any account button
+// Button to transfer amount to any account
 btnTransfer.addEventListener("click", (e) => {
   e.preventDefault();
   const amount = Number(inputTransferAmount.value);
@@ -227,4 +233,11 @@ btnClose.addEventListener("click", (e) => {
   }
   inputCloseUsername.value = inputClosePin.value = "";
 });
-/////////////////////////////////////////////////
+
+// Sort movements button
+let sorted = false;
+btnSort.addEventListener("click", (e) => {
+  e.preventDefault;
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
